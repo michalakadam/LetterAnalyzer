@@ -6,9 +6,9 @@
 
     <groupId>pl.michalak.adam</groupId>
     <artifactId>LetterAnalyzer</artifactId>
-    <version>0.1</version>
+    <version>0.1-SNAPSHOT</version>
     <name>LetterAnalyzer</name>
-    <description>Program that analyzes letters</description>
+    <description>Program that analyzes letters used in a text.</description>
     <url>github.com/michalakadam</url>
   
     <properties>
@@ -19,7 +19,6 @@
         <project.java.version>1.8</project.java.version>
         <maven.compiler.source>${project.java.version}</maven.compiler.source>
         <maven.compiler.target>${project.java.version}</maven.compiler.target>
-      <!-- see source for the plugins to verify if those can be skipped, they should IIRC -->
         <maven.compiler.encoding>${project.build.sourceEncoding}</maven.compiler.encoding>
         <maven.resources.encoding>${project.build.sourceEncoding}</maven.resources.encoding>
         <version.maven>3.5.3</version.maven>
@@ -84,7 +83,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-<!-- if diff enconding than UTF8 is needed: https://maven.apache.org/plugins/maven-resources-plugin/examples/encoding.html -->
                 <version>${version.plugin.maven.resources}</version>
             </plugin>
         </plugins>
