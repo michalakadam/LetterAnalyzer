@@ -11,7 +11,7 @@ class ErrorPrinter {
     }
 
     void print(String errorMessage) {
-        printStream.print(errorMessage);
+        printStream.println(errorMessage);
     }
 
     static ErrorPrinter newInstance() {
