@@ -26,14 +26,30 @@ public class ProgramFlowController {
         this.textAnalyzer = TextAnalyzer.newInstance();
     }
 
+    /**
+     * Method that ensures that program is executed in correct order.
+     * Prompts user for input, collects it (with validation) and passes it to analyzer.
+     * Finally informs user about result.
+     */
     public void runLetterAnalyzer() {
-       this.promptUserForInput();
+       promptUserForInput();
+       String userInput = collectUserInput();
     }
 
     private void promptUserForInput() {
         this.consoleOutput.println("Welcome to the LetterAnalyzer!");
         this.consoleOutput.println("This program assembles words from user's text according to letters that build them.");
+    }
+
+    private String collectUserInput() {
         this.consoleOutput.print("Provide LetterAnalyzer with text: ");
+        try {
+            return inputProvider.collectStringInputFromUser();
+        }
+        catch (IllegalArgumentException exception) {
+            this.consoleOutput.printErr(exception.getMessage());
+            return collectUserInput();
+        }
     }
 
     /**
