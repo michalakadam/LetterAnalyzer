@@ -5,8 +5,16 @@ package pl.michalak.adam.letteranalyzer.textanalysis;
  */
 public class TextAnalyzer implements TextAnalysisAPI {
 
-    private TextAnalyzer(){}
+    private final LettersWordsMatcher lettersWordsMatcher;
 
+    private TextAnalyzer(){
+        this.lettersWordsMatcher = LettersWordsMatcher.newInstance();
+    }
+
+    @Override
+    public String analyzeText(String text) {
+        return this.lettersWordsMatcher.matchWordsToLetters(text);
+    }
 
     /**
      * Factory method instantiating new immutable TextAnalyzer object.
@@ -15,4 +23,5 @@ public class TextAnalyzer implements TextAnalysisAPI {
     public static TextAnalyzer newInstance() {
         return new TextAnalyzer();
     }
+
 }

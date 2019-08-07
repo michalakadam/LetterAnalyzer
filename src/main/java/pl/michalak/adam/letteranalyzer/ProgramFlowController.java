@@ -34,6 +34,8 @@ public class ProgramFlowController {
     public void runLetterAnalyzer() {
        promptUserForInput();
        String userInput = collectUserInput();
+       String result = analyzeUserInput(userInput);
+       this.consoleOutput.println(result);
     }
 
     private void promptUserForInput() {
@@ -50,6 +52,10 @@ public class ProgramFlowController {
             this.consoleOutput.printErr(exception.getMessage());
             return collectUserInput();
         }
+    }
+
+    private String analyzeUserInput(String userInput) {
+        return this.textAnalyzer.analyzeText(userInput);
     }
 
     /**
