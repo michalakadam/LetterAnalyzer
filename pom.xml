@@ -6,7 +6,7 @@
 
     <groupId>pl.michalak.adam</groupId>
     <artifactId>LetterAnalyzer</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>LetterAnalyzer</name>
     <description>Program that analyzes letters used in a text.</description>
     <url>github.com/michalakadam</url>
@@ -71,7 +71,7 @@
                         <index>true</index>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>pl.michalak.adam.LetterAnalyzer</mainClass>
+                            <mainClass>pl.michalak.adam.letteranalyzer.StartingClass</mainClass>
                         </manifest>
                         <manifestEntries>
                             <mode>development</mode>
