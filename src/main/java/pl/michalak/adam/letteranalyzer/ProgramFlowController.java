@@ -27,7 +27,13 @@ public class ProgramFlowController {
     }
 
     public void runLetterAnalyzer() {
+       this.promptUserForInput();
+    }
 
+    private void promptUserForInput() {
+        this.consoleOutput.println("Welcome to the LetterAnalyzer!");
+        this.consoleOutput.println("This program assembles words from user's text according to letters that build them.");
+        this.consoleOutput.print("Provide LetterAnalyzer with text: ");
     }
 
     /**
