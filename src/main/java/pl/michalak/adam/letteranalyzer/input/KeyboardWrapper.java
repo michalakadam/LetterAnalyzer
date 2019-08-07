@@ -13,7 +13,9 @@ class KeyboardWrapper implements Supplier<String> {
 
     @Override
     public String get() {
-        return this.keyboard.nextLine();
+        String userInput = this.keyboard.nextLine();
+        this.keyboard.close();
+        return userInput;
     }
 
     static KeyboardWrapper newInstance() {
