@@ -8,8 +8,8 @@ public class TextAnalyzer implements TextAnalysisAPI {
 
     private final LettersWordsMatcher lettersWordsMatcher;
 
-    private TextAnalyzer(){
-        this.lettersWordsMatcher = LettersWordsMatcher.newInstance();
+    private TextAnalyzer(LettersWordsMatcher lettersWordsMatcher){
+        this.lettersWordsMatcher = lettersWordsMatcher;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class TextAnalyzer implements TextAnalysisAPI {
      * @return TextAnalyzer
      */
     public static TextAnalyzer newInstance() {
-        return new TextAnalyzer();
+        return new TextAnalyzer(LettersWordsMatcher.newInstance());
     }
 
 }

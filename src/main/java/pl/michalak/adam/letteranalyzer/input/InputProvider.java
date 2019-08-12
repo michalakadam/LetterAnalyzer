@@ -9,9 +9,9 @@ public class InputProvider implements InputAPI {
     private final KeyboardWrapper keyboardWrapper;
     private final InputValidator inputValidator;
 
-    private InputProvider(){
-        this.keyboardWrapper = KeyboardWrapper.newInstance();
-        this.inputValidator = InputValidator.newInstance();
+    private InputProvider(KeyboardWrapper keyboardWrapper, InputValidator inputValidator){
+        this.keyboardWrapper = keyboardWrapper;
+        this.inputValidator = inputValidator;
     }
 
     @Override
@@ -31,7 +31,7 @@ public class InputProvider implements InputAPI {
      * @return InputProvider
      */
      public static InputProvider newInstance() {
-        return new InputProvider();
+        return new InputProvider(KeyboardWrapper.newInstance(), InputValidator.newInstance());
      }
 
 }

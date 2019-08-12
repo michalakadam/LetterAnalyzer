@@ -6,8 +6,8 @@ class ConsolePrinter {
 
     private final PrintStream printStream;
 
-    private ConsolePrinter() {
-        this.printStream = new PrintStream(System.out);
+    private ConsolePrinter(PrintStream printStream) {
+        this.printStream = printStream;
     }
 
     void print(String message) {
@@ -19,6 +19,6 @@ class ConsolePrinter {
     }
 
     static ConsolePrinter newInstance() {
-        return new ConsolePrinter();
+        return new ConsolePrinter(new PrintStream(System.out));
     }
 }

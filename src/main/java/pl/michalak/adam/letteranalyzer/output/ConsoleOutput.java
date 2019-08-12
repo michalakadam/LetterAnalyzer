@@ -9,9 +9,9 @@ public class ConsoleOutput implements OutputAPI {
     private final ConsolePrinter consolePrinter;
     private final ErrorPrinter errorPrinter;
 
-    private ConsoleOutput(){
-        this.consolePrinter = ConsolePrinter.newInstance();
-        this.errorPrinter = ErrorPrinter.newInstance();
+    private ConsoleOutput(ConsolePrinter consolePrinter, ErrorPrinter errorPrinter){
+        this.consolePrinter = consolePrinter;
+        this.errorPrinter = errorPrinter;
     }
 
     @Override
@@ -34,6 +34,6 @@ public class ConsoleOutput implements OutputAPI {
      * @return ConsoleOutput
      */
     public static ConsoleOutput newInstance() {
-        return new ConsoleOutput();
+        return new ConsoleOutput(ConsolePrinter.newInstance(), ErrorPrinter.newInstance());
     }
 }

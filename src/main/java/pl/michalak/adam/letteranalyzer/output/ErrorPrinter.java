@@ -6,8 +6,8 @@ class ErrorPrinter {
 
     private final PrintStream printStream;
 
-    private ErrorPrinter() {
-        this.printStream = new PrintStream(System.err);
+    private ErrorPrinter(PrintStream printStream) {
+        this.printStream = printStream;
     }
 
     void print(String errorMessage) {
@@ -15,6 +15,6 @@ class ErrorPrinter {
     }
 
     static ErrorPrinter newInstance() {
-        return new ErrorPrinter();
+        return new ErrorPrinter(new PrintStream(System.err));
     }
 }

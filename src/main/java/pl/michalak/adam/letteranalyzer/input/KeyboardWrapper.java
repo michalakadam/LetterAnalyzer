@@ -7,8 +7,8 @@ class KeyboardWrapper implements Supplier<String> {
 
     private final Scanner keyboard;
 
-    private KeyboardWrapper() {
-        this.keyboard = new Scanner(System.in);
+    private KeyboardWrapper(Scanner keyboard) {
+        this.keyboard = keyboard;
     }
 
     @Override
@@ -21,6 +21,6 @@ class KeyboardWrapper implements Supplier<String> {
     }
 
     static KeyboardWrapper newInstance() {
-        return new KeyboardWrapper();
+        return new KeyboardWrapper(new Scanner(System.in));
     }
 }

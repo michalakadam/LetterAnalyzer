@@ -8,10 +8,10 @@ class LettersWordsMatcher {
     private final TextSplitter textSplitter;
     private final WordSplitter wordSplitter;
 
-    private LettersWordsMatcher() {
-        this.lettersWithWords = new HashMap<>();
-        this.textSplitter = TextSplitter.newInstance();
-        this.wordSplitter = WordSplitter.newInstance();
+    private LettersWordsMatcher(HashMap lettersWithWords, TextSplitter textSplitter, WordSplitter wordSplitter) {
+        this.lettersWithWords = lettersWithWords;
+        this.textSplitter = textSplitter;
+        this.wordSplitter = wordSplitter;
     }
 
     String matchWordsToLetters(final String text) {
@@ -54,6 +54,6 @@ class LettersWordsMatcher {
     }
 
     static LettersWordsMatcher newInstance() {
-        return new LettersWordsMatcher();
+        return new LettersWordsMatcher(new HashMap<>(), TextSplitter.newInstance(), WordSplitter.newInstance());
     }
 }
