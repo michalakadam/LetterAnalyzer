@@ -11,9 +11,7 @@ class TextSplitter implements Splitter{
     @Override
     public HashSet<String> split(String text) {
         HashSet<String> wordSet = new LinkedHashSet<>();
-        for(String word : text.split(" ")){
-            wordSet.add(word);
-        }
+        wordSet.addAll(Arrays.asList(text.split(" ")));
         return wordSet;
     }
 

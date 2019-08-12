@@ -2,6 +2,7 @@ package pl.michalak.adam.letteranalyzer.textanalysis;
 
 /**
  * Implementation of API providing methods for text analysis.
+ * @author Adam Michalak
  */
 public class TextAnalyzer implements TextAnalysisAPI {
 

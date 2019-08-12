@@ -43,10 +43,12 @@ class LettersWordsMatcher {
 
     private String lettersWithWordsToString() {
         StringBuilder stringBuilder = new StringBuilder();
-        Iterator iterator = this.lettersWithWords.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry pair = (Map.Entry)iterator.next();
-            stringBuilder.append(pair.getKey()).append(": ").append(pair.getValue()).append("\n");
+        for (Map.Entry<String, List<String>> stringListEntry : this.lettersWithWords.entrySet()) {
+            stringBuilder
+                    .append(((Map.Entry) stringListEntry).getKey())
+                    .append(": ")
+                    .append(((Map.Entry) stringListEntry).getValue())
+                    .append("\n");
         }
         return stringBuilder.toString().replaceAll("[\\[\\]]", "");
     }

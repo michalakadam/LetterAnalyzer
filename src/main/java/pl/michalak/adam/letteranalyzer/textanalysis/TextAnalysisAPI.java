@@ -1,7 +1,8 @@
 package pl.michalak.adam.letteranalyzer.textanalysis;
 
 /**
- * Provides methods for text analysis which is the main goal of this program.
+ * Analyzes text provided by user which is the main goal of this program.
+ * @author Adam Michalak
  */
 public interface TextAnalysisAPI {
 
@@ -10,5 +11,5 @@ public interface TextAnalysisAPI {
      * @param text - input provided by user
      * @return result of analysis in form letter - [words]\n
      */
-    public String analyzeText(String text);
+    String analyzeText(String text);
 }

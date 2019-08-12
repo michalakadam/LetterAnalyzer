@@ -4,5 +4,5 @@ import java.util.HashSet;
 
 public interface Splitter {
 
-    public HashSet<String> split(String charSequence);
+    HashSet<String> split(String charSequence);
 }

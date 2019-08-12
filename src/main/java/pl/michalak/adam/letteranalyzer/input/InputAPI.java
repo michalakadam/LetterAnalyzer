@@ -1,7 +1,8 @@
 package pl.michalak.adam.letteranalyzer.input;
 
 /**
- * Provides methods for gathering and validation of user's input.
+ * Gathers and validates user input.
+ * @author Adam Michalak
  */
 public interface InputAPI {
 
@@ -9,10 +10,10 @@ public interface InputAPI {
      * Enables user to provide String answer for an inquiry.
      * @return user input as a String.
      */
-    public String collectStringInputFromUser();
+    String collectStringInputFromUser();
 
     /**
      * Closes Scanner to prevent Resource Leak
      */
-    public void closeScanner();
+    void closeScanner();
 }

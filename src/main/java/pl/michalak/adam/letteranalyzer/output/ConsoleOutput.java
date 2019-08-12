@@ -1,12 +1,10 @@
 package pl.michalak.adam.letteranalyzer.output;
 
-import java.io.PrintStream;
-
 /**
  * Implementation of API providing methods for displaying output to the user in console.
+ * @author Adam Michalak
  */
 public class ConsoleOutput implements OutputAPI {
-
 
     private final ConsolePrinter consolePrinter;
     private final ErrorPrinter errorPrinter;

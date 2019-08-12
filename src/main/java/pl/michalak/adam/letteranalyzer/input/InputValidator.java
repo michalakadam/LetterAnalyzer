@@ -2,7 +2,7 @@ package pl.michalak.adam.letteranalyzer.input;
 
 class InputValidator {
 
-    private final int MAX_LENGTH = 1000;
+    private final static int MAX_LENGTH = 1000;
 
     private InputValidator() {}
 

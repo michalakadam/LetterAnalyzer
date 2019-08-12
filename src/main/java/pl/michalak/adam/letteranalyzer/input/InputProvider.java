@@ -2,6 +2,7 @@ package pl.michalak.adam.letteranalyzer.input;
 
 /**
  * Implementation of API providing methods for gathering input from the user.
+ * @author Adam Michalak
  */
 public class InputProvider implements InputAPI {
 
