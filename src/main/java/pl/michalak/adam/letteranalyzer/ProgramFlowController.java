@@ -44,17 +44,17 @@ public class ProgramFlowController {
     }
 
     private String collectUserInput() {
-        this.consoleOutput.print("Provide LetterAnalyzer with text: ");
-        try {
-            return inputProvider.collectStringInputFromUser();
+        String userInput = "";
+        while (userInput.trim().isEmpty()) {
+            this.consoleOutput.print("Provide LetterAnalyzer with text: ");
+            try {
+                userInput = inputProvider.collectStringInputFromUser();
+            } catch (IllegalArgumentException exception) {
+                this.consoleOutput.printErr(exception.getMessage());
+            }
         }
-        catch (IllegalArgumentException exception) {
-            this.consoleOutput.printErr(exception.getMessage());
-            return collectUserInput();
-        }
-        finally {
-            this.inputProvider.closeScanner();
-        }
+        this.inputProvider.closeScanner();
+        return userInput;
     }
 
     private String analyzeUserInput(String userInput) {

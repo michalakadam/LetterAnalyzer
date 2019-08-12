@@ -20,7 +20,7 @@ class LettersWordsMatcher {
         fillLettersWithWords(words);
         return lettersWithWordsToString();
     }
-    
+
     private void fillLettersWithWords(HashSet<String> words) {
         for(String word : words) {
             for(String character : this.wordSplitter.split(word)) {
