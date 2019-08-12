@@ -20,12 +20,7 @@ class LettersWordsMatcher {
         fillLettersWithWords(words);
         return lettersWithWordsToString();
     }
-
-    private void putKeyAndValue(String character, String word, List<String> wordsForCharacterKey) {
-        wordsForCharacterKey.add(word);
-        this.lettersWithWords.put(character, wordsForCharacterKey);
-    }
-
+    
     private void fillLettersWithWords(HashSet<String> words) {
         for(String word : words) {
             for(String character : this.wordSplitter.split(word)) {
@@ -39,6 +34,11 @@ class LettersWordsMatcher {
                 }
             }
         }
+    }
+
+    private void putKeyAndValue(String character, String word, List<String> wordsForCharacterKey) {
+        wordsForCharacterKey.add(word);
+        this.lettersWithWords.put(character, wordsForCharacterKey);
     }
 
     private String lettersWithWordsToString() {
