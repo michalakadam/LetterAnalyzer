@@ -18,7 +18,7 @@ class ConsolePrinter {
         this.printStream.println(message);
     }
 
-    static ConsolePrinter newInstance() {
-        return new ConsolePrinter(new PrintStream(System.out));
+    static ConsolePrinter newInstance(PrintStream printStream) {
+        return new ConsolePrinter(printStream);
     }
 }

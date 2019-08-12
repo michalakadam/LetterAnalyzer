@@ -1,5 +1,7 @@
 package pl.michalak.adam.letteranalyzer.output;
 
+import java.io.PrintStream;
+
 /**
  * Implementation of API providing methods for displaying output to the user in console.
  * @author Adam Michalak
@@ -7,9 +9,9 @@ package pl.michalak.adam.letteranalyzer.output;
 public class ConsoleOutput implements OutputAPI {
 
     private final ConsolePrinter consolePrinter;
-    private final ErrorPrinter errorPrinter;
+    private final ConsolePrinter errorPrinter;
 
-    private ConsoleOutput(ConsolePrinter consolePrinter, ErrorPrinter errorPrinter){
+    private ConsoleOutput(ConsolePrinter consolePrinter, ConsolePrinter errorPrinter){
         this.consolePrinter = consolePrinter;
         this.errorPrinter = errorPrinter;
     }
@@ -26,7 +28,7 @@ public class ConsoleOutput implements OutputAPI {
 
     @Override
     public void printErr(String errorMessage) {
-        this.errorPrinter.print(errorMessage);
+        this.errorPrinter.println(errorMessage);
     }
 
     /**
@@ -34,6 +36,8 @@ public class ConsoleOutput implements OutputAPI {
      * @return ConsoleOutput
      */
     public static ConsoleOutput newInstance() {
-        return new ConsoleOutput(ConsolePrinter.newInstance(), ErrorPrinter.newInstance());
+        return new ConsoleOutput(
+                ConsolePrinter.newInstance(new PrintStream(System.out)),
+                ConsolePrinter.newInstance(new PrintStream(System.err)));
     }
 }
