@@ -21,11 +21,7 @@ public class InputValidatorTest {
         boolean expected;
         String ofLengthZero = "";
         //act
-        expected = false;
         this.inputValidator.validate(ofLengthZero);
-        //assert
-        //if exception is not thrown, fail the test.
-        assertTrue(expected);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
@@ -85,11 +81,7 @@ public class InputValidatorTest {
                 "OOP to me means only messaging, local retention and protection and hiding of state-process, and extreme late-binding of all things.\n" +
                 "This sentence is above 100th word";
         //act
-        expected = false;
         this.inputValidator.validate(ofLengthBiggerThanThousand);
-        //assert
-        //Fail the test if exception is not thrown
-        assertTrue(expected);
     }
 
     @DataProvider(name = "textProvider")
