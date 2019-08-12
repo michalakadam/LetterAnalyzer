@@ -52,6 +52,9 @@ public class ProgramFlowController {
             this.consoleOutput.printErr(exception.getMessage());
             return collectUserInput();
         }
+        finally {
+            this.inputProvider.closeScanner();
+        }
     }
 
     private String analyzeUserInput(String userInput) {

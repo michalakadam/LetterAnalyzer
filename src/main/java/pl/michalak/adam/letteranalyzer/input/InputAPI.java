@@ -10,4 +10,9 @@ public interface InputAPI {
      * @return user input as a String.
      */
     public String collectStringInputFromUser();
+
+    /**
+     * Closes Scanner to prevent Resource Leak
+     */
+    public void closeScanner();
 }

@@ -20,6 +20,11 @@ public class InputProvider implements InputAPI {
         return userInput;
     }
 
+    @Override
+    public void closeScanner() {
+        this.keyboardWrapper.close();
+    }
+
     /**
      * Factory method instantiating new immutable InputProvider object.
      * @return InputProvider

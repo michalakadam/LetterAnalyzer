@@ -13,13 +13,14 @@ class KeyboardWrapper implements Supplier<String> {
 
     @Override
     public String get() {
-        String userInput = this.keyboard.nextLine();
+        return this.keyboard.nextLine();
+    }
+
+    void close() {
         this.keyboard.close();
-        return userInput;
     }
 
     static KeyboardWrapper newInstance() {
         return new KeyboardWrapper();
     }
-
 }
